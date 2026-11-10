@@ -1,0 +1,12 @@
+**
+!requirements.txt
+!src/
+!src/**
+!models/
+!models/churn/
+!models/churn/tuned_best_model.joblib
+!models/forecasting/
+!models/forecasting/tuned_best_model.joblib
+!reports/
+!reports/churn_tuning_summary.json
+!reports/forecasting_tuning_summary.json

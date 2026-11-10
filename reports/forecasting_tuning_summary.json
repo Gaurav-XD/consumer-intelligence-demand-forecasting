@@ -1,0 +1,151 @@
+{
+  "selected_model": "Random Forest",
+  "selection_criterion": "Lowest mean training-only expanding-calendar CV MAE; ties use model order.",
+  "best_parameters": {
+    "model__max_depth": null,
+    "model__min_samples_leaf": 5
+  },
+  "cv_mae": 8.44146389817226,
+  "cv_folds": [
+    {
+      "training_start_month": "2025-01",
+      "training_end_month": "2025-01",
+      "validation_month": "2025-02",
+      "training_rows": 100,
+      "validation_rows": 100
+    },
+    {
+      "training_start_month": "2025-01",
+      "training_end_month": "2025-02",
+      "validation_month": "2025-03",
+      "training_rows": 200,
+      "validation_rows": 100
+    }
+  ],
+  "models": {
+    "Random Forest": {
+      "best_parameters": {
+        "model__max_depth": null,
+        "model__min_samples_leaf": 5
+      },
+      "cv_mae": 8.44146389817226,
+      "cv_mae_std": 0.20375522986988948
+    },
+    "Gradient Boosting": {
+      "best_parameters": {
+        "model__learning_rate": 0.05,
+        "model__max_depth": 2
+      },
+      "cv_mae": 9.13109407106282,
+      "cv_mae_std": 0.05986713458701409
+    }
+  },
+  "validation_metrics": {
+    "mae": 8.283503300970617,
+    "rmse": 10.388782201669988,
+    "mape": 24.36834687478253,
+    "wape": 21.256102902157085
+  },
+  "walk_forward_metrics": {
+    "mae": 8.371996326516621,
+    "rmse": 10.369701012680366,
+    "mape": 24.411556873214792,
+    "wape": 21.483182772688274
+  },
+  "walk_forward_rows": 300,
+  "feature_columns": [
+    "lag_1_quantity",
+    "lag_2_quantity",
+    "lag_3_quantity",
+    "lag_6_quantity",
+    "lag_12_quantity",
+    "rolling_3_mean_quantity",
+    "rolling_6_mean_quantity",
+    "rolling_12_mean_quantity",
+    "rolling_3_std_quantity",
+    "rolling_6_std_quantity",
+    "month_of_year",
+    "quarter",
+    "trend_index"
+  ],
+  "train_period": {
+    "split": "train",
+    "requested_start_month": "2024-01",
+    "requested_end_month": "2025-03",
+    "start_month": "2025-01",
+    "end_month": "2025-03",
+    "row_count": 300,
+    "product_count": 100,
+    "target_mean": 36.46,
+    "target_sum": 10938,
+    "missing_value_counts": {
+      "product_id": 0,
+      "month": 0,
+      "category": 0,
+      "brand": 0,
+      "quantity_sold": 0,
+      "lag_1_quantity": 0,
+      "lag_2_quantity": 0,
+      "lag_3_quantity": 0,
+      "lag_6_quantity": 0,
+      "lag_12_quantity": 0,
+      "rolling_3_mean_quantity": 0,
+      "rolling_6_mean_quantity": 0,
+      "rolling_12_mean_quantity": 0,
+      "rolling_3_std_quantity": 0,
+      "rolling_6_std_quantity": 0,
+      "month_of_year": 0,
+      "quarter": 0,
+      "trend_index": 0
+    }
+  },
+  "validation_period": {
+    "split": "validation",
+    "requested_start_month": "2025-04",
+    "requested_end_month": "2025-06",
+    "start_month": "2025-04",
+    "end_month": "2025-06",
+    "row_count": 300,
+    "product_count": 100,
+    "target_mean": 38.97,
+    "target_sum": 11691,
+    "missing_value_counts": {
+      "product_id": 0,
+      "month": 0,
+      "category": 0,
+      "brand": 0,
+      "quantity_sold": 0,
+      "lag_1_quantity": 0,
+      "lag_2_quantity": 0,
+      "lag_3_quantity": 0,
+      "lag_6_quantity": 0,
+      "lag_12_quantity": 0,
+      "rolling_3_mean_quantity": 0,
+      "rolling_6_mean_quantity": 0,
+      "rolling_12_mean_quantity": 0,
+      "rolling_3_std_quantity": 0,
+      "rolling_6_std_quantity": 0,
+      "month_of_year": 0,
+      "quarter": 0,
+      "trend_index": 0
+    }
+  },
+  "test_period": {
+    "requested_start_month": "2025-07",
+    "requested_end_month": "2025-12"
+  },
+  "methodology": "Expanding calendar-month CV uses training rows only. The saved model is fitted only on the training period. Walk-forward clones refit using all eligible rows before each validation month; prior actual demand is assumed available. The final test period is not used for tuning or evaluation.",
+  "limitations": [
+    "Only two training CV folds are available with the current three eligible training months.",
+    "Validation estimates are reused for comparison and walk-forward assessment; future test evaluation remains necessary.",
+    "Precomputed lags support one-step rolling forecasts, not fixed-origin multistep forecasts."
+  ],
+  "model_path": "models/forecasting/tuned_best_model.joblib",
+  "library_versions": {
+    "python": "3.11.0",
+    "scikit_learn": "1.4.2",
+    "pandas": "2.2.2",
+    "numpy": "1.26.4",
+    "joblib": "1.4.2"
+  }
+}

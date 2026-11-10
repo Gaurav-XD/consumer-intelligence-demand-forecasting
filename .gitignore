@@ -1,0 +1,117 @@
+# Python bytecode and packaging
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+build/
+dist/
+pip-wheel-metadata/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Test, type-checker, notebook, and linter caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.hypothesis/
+.cache/
+cache/
+.coverage
+.coverage.*
+htmlcov/
+.ipynb_checkpoints/
+
+# Local environment files and credentials
+.env*
+secrets/
+credentials/
+.ssh/
+.aws/
+.netrc
+.npmrc
+.pypirc
+.pgpass
+.git-credentials
+*.secret
+*.secrets
+secrets.*
+credentials.*
+*_credentials.*
+*_secrets.*
+*_token.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.crt
+*.cer
+
+# Temporary files, logs, editor state, and OS files
+*.tmp
+*.temp
+*.log
+*.log.*
+*.bak
+*.orig
+*.swp
+*.swo
+*.pid
+*.lock
+*.sock
+*.dump
+*~
+tmp/
+temp/
+logs/
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+
+# Local MLflow tracking and other runtime state
+mlruns/
+mlartifacts/
+mlflow.db
+*.db
+*.sqlite
+*.sqlite3
+
+# Generated datasets (retain empty directory markers)
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Generated models: keep only the tuned models required by the inference API
+models/*
+!models/.gitkeep
+!models/churn/
+models/churn/*
+!models/churn/tuned_best_model.joblib
+!models/forecasting/
+models/forecasting/*
+!models/forecasting/tuned_best_model.joblib
+
+# Generated reports: keep only the tuned summaries required by the API
+reports/*
+!reports/.gitkeep
+!reports/churn_tuning_summary.json
+!reports/forecasting_tuning_summary.json
+
+# Notebook checkpoint and local tooling state
+.python-version.local
+.DS_Store?
+.ipython/
+.jupyter/
+*.prof
